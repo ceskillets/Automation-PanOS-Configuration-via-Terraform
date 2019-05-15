@@ -1,9 +1,12 @@
 
-name: terraform-provider-example
-label: terraform-provider-example
+name: Terraform Provider Example
+label: Terraform Provider Example
 description: Example of using the PAN-OS Terraform provider to configure a firewall.
 type: terraform
 extends:
+
+labels:
+  collection: Automation CE Team
 
 variables:
   - name: panos_hostname
