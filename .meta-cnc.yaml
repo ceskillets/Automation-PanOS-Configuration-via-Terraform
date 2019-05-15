@@ -1,0 +1,21 @@
+
+name: terraform-provider-example
+label: terraform-provider-example
+description: Example of using the PAN-OS Terraform provider to configure a firewall.
+type: terraform
+extends:
+
+variables:
+  - name: panos_hostname
+    description: PAN-OS Hostname
+    default: 192.168.55.10
+    type_hint: text
+  - name: panos_username
+    description: PAN-OS Username
+    default: admin
+    type_hint: text
+  - name: panos_password
+    description: PAN-OS Password
+    default: paloalto
+    type_hint: password
+
