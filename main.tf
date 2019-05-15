@@ -177,8 +177,8 @@ resource "panos_nat_rule_group" "nat" {
 
       destination = {
         static {
-          address = "${panos_address_object.web-srv.value}"
-          port    = "${panos_service_object.service-tcp-221.destination_port}"
+          address = "${panos_address_object.web-srv.name}"
+          port    = "22"
         }
       }
     }
@@ -206,8 +206,8 @@ resource "panos_nat_rule_group" "nat" {
 
       destination = {
         static {
-          address = "${panos_address_object.db-srv.value}"
-          port    = "${panos_service_object.service-tcp-222.destination_port}"
+          address = "${panos_address_object.db-srv.name}"
+          port    = "22"
         }
       }
     }
@@ -228,15 +228,14 @@ resource "panos_nat_rule_group" "nat" {
       source {
         dynamic_ip_and_port {
           interface_address {
-            interface = "${panos_ethernet_interface.eth3.name}"
+            interface = "${panos_ethernet_interface.eth2.name}"
           }
         }
       }
 
       destination = {
         static {
-          address = "${panos_address_object.db-srv.value}"
-          port    = "${panos_service_object.service-tcp-222.destination_port}"
+          address = "${panos_address_object.web-srv.name}"
         }
       }
     }
