@@ -60,39 +60,6 @@ resource "panos_static_route_ipv4" "default" {
   next_hop       = "192.168.55.2"
 }
 
-resource "panos_administrative_tag" "prod" {
-  name  = "Prod"
-  color = "color1"
-}
-
-resource "panos_administrative_tag" "si" {
-  name  = "SI"
-  color = "color13"
-}
-
-resource "panos_administrative_tag" "dev" {
-  name  = "Dev"
-  color = "color2"
-}
-
-resource "panos_address_object" "test1" {
-  name        = "Test-1.1.1.1"
-  value       = "1.1.1.1"
-  description = "Description One"
-}
-
-resource "panos_address_object" "test2" {
-  name        = "Test-2.2.2.2"
-  value       = "2.2.2.2"
-  description = "Description Two"
-}
-
-resource "panos_address_object" "test3" {
-  name        = "Test-3.3.3.3"
-  value       = "3.3.3.3"
-  description = "Description Three"
-}
-
 resource "panos_address_object" "web-srv" {
   name  = "web-srv"
   value = "192.168.45.5"
